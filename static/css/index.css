@@ -332,12 +332,17 @@ a {
     transition: all 0.4s ease-out;
 }
 
-
-
-
-
-
 /** END OF MAIN INDEX PAGE SECTION **/
+
+/** ABOUT PAGE SECTION **/
+.about-btn-container {
+  display: flex;
+  align-self: self-end;
+  align-items: center;
+  gap: 2px;
+  margin-left: 20%;
+}
+/** END OF ABOUT PAGE SECTION **/
 
 /** LOGIN PAGE SECTION **/
 .login_div {
