@@ -1,0 +1,19 @@
+{
+  "name": "edibro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node watch static/src/output.css",
+    "watch:css": "tailwindcss -i ./static/src/input.css -o ./static/src/output.css --watch",
+    "dev": "tailwindcss -i ./static/src/input.css -o ./static/src/output.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
