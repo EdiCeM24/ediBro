@@ -19,7 +19,7 @@
                     <a href="mailto: edimarsxe@gmail.com" class="text-blue-700 hover:text-blue-800 text-xl font-semibold font-serif no-underline">E-mail Me</a>
                     <a href="tel:+2347026266495" class="text-blue-700 hover:text-blue-800 text-xl font-semibold font-serif no-underline">Call Me</a>
                   </div>
-                  <form action="{% url 'contact' %}" method="POST">
+                  <form action="{% url 'contact' %}" class="contact-form" method="POST">
                     {% csrf_token %}
                     <div class="mb-3">
                       <label for="recipient-name" class="col-form-label text-dark fs-2 fw-bold">First Name:</label>
@@ -67,3 +67,13 @@
     </div>
 
   {% endblock %}
+
+  <script>
+    //FOR CONTACT FORM IN CONTACT PAGE SECTION
+    document.querySelector(".contact-form").addEventListener('submit', function(e) {
+      const inputs = document.querySelectorAll('input[type="text"], textarea');
+      inputs.forEach(input => {
+        input.value = input.value.trim();
+      });
+    });
+  </script>

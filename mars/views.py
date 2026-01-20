@@ -201,6 +201,16 @@ def contact(request):
       subject = request.POST.get('subject').strip()
       message = request.POST.get('message').strip()
 
+      user_data_has_error = False
+
+      if User.objects.filter(first_name=first_name).exists():
+       user_data_has_error = True
+       messages.error(request, "First name already exists.")
+
+      if User.objects.filter(last_name=last_name).exists():
+         user_data_has_error = True
+         messages.error(request, "Last name already exists.")   
+
       # Here you can handle the form data, e.g., save it to the database or
       if User.objects.filter(email=email):
         messages.error(request, 'The same email address, please change the email.')
@@ -215,14 +225,17 @@ def contact(request):
         contacts.website = website
         contacts.message = message
 
+      
         messages.success(request, 'Your message has been submitted successfully. Thanks!')
         contacts.save()  # The error for contact page when submitted is pointed here.
 
         return redirect('home')
 
       except ValidationError as e:
-        messages.error(request, e.messages)
-        contacts = ContactForm()   #return redirect('contact')
+        if user_data_has_error:
+          messages.error(request, e.messages)
+          contacts = ContactForm()   #return redirect('contact')
+          return redirect('signup')
 
     return render(request, 'abc/contact.html') 
 

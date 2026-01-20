@@ -45,3 +45,12 @@ contentDisplaysEl.forEach((icon, index) => {
     contentRevealsEl[index].classList.toggle("hidden");
   });
 });
+
+
+//FOR CONTACT FORM IN CONTACT PAGE SECTION
+document.querySelector(".contact-form").addEventListener('submit', function(e) {
+  const inputs = document.querySelectorAll('input[type="text"], textarea');
+  inputs.forEach(input => {
+    input.value = input.value.trim();
+  });
+});

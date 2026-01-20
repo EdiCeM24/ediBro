@@ -25,14 +25,14 @@ class ContactForm(forms.ModelForm):
         model = Contact
         fields = ['first_name', 'last_name', 'email', 'phone_number', 'website', 'company_name', 'subject', 'message']
 
-        first_name = forms.CharField(widget=forms.TextInput())
-        last_name = forms.CharField(widget=forms.TextInput())
-        email = forms.CharField(widget=forms.TextInput())
-        phone_number = forms.CharField(validators=[PhoneValidator()])
-        website = forms.CharField(widget=forms.URLInput())
-        company_name = forms.CharField(widget=forms.TextInput())
-        subject = forms.CharField(widget=forms.TextInput())
-        message = forms.CharField(widget=forms.Textarea())
+        first_name = forms.CharField(widget=forms.TextInput(), required=True)
+        last_name = forms.CharField(widget=forms.TextInput(), required=True)
+        email = forms.CharField(widget=forms.TextInput(), required=True)
+        phone_number = forms.CharField(validators=[PhoneValidator()], required=True)
+        website = forms.CharField(widget=forms.URLInput(), required=True)
+        company_name = forms.CharField(widget=forms.TextInput(), required=True)
+        subject = forms.CharField(widget=forms.TextInput(), required=True)
+        message = forms.CharField(widget=forms.Textarea(), required=True)
 
 
     def clean_email(self):
@@ -41,6 +41,9 @@ class ContactForm(forms.ModelForm):
           raise forms.ValidationError("This email is already in use. Please use a different email.")
         return email
         
+    def clean_name(self):
+        name = self.changed_data['name']
+        return name.strip()  #Removes spaces    
        
 User = get_user_model()    
 
@@ -51,10 +54,10 @@ class SignupForm(UserCreationForm):
         model = User
         fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
         
-        first_name = forms.CharField(widget=forms.TextInput())
-        username = forms.CharField(widget=forms.TextInput())
-        email = forms.EmailField(widget=forms.TextInput())
-        password1 = forms.CharField(widget=forms.PasswordInput())
+        first_name = forms.CharField(widget=forms.TextInput(), required=True)
+        username = forms.CharField(widget=forms.TextInput(), required=True)
+        email = forms.EmailField(widget=forms.TextInput(), required=True)
+        password1 = forms.CharField(widget=forms.PasswordInput(), required=True)
         
       
       
@@ -70,8 +73,8 @@ def signup(self):
     
         
 class LoginForm(AuthenticationForm):
-    username = forms.CharField(widget=forms.TextInput())
-    passWord = forms.CharField(widget=forms.PasswordInput())
+    username = forms.CharField(widget=forms.TextInput(), required=True)
+    passWord = forms.CharField(widget=forms.PasswordInput(), required=True)
     remember_me = forms.BooleanField(required=False)
 
 
