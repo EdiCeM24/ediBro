@@ -22,9 +22,9 @@
               {% if messages %}
                 {% for message in messages %}
                   {% if message.tags == 'error' %}
-                   <span><h4 class="text-rose-950">{{ message }}</h4></span>   
+                   <span><h4 class="text-rose-950 sm:text-white sm:font-semibold">{{ message }}</h4></span>   
                    {% else %}
-                     <span><h4 class="text-blue-950">{{ message }}</h4></span>
+                     <span><h4 class="text-blue-950 sm:text-white sm:font-semibold">{{ message }}</h4></span>
                   {% endif %}
                 {% endfor %}  
               {% endif %}   

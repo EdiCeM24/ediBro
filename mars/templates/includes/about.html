@@ -13,7 +13,7 @@
             <span class="modal-title fs-5" id="exampleModalLabel">
               <h2 class="flex text-center justify-center text-blue-900 text-3xl font-semibold mb-4 mt-10">About Me</h2>
             </span>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close fs-5 fw-bold text-danger" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="flex items-center justify-evenly gap-10 mt-6 mb-6">
@@ -115,53 +115,33 @@
                           <p class="text-point-about text-2xl font-semibold font-serif text-gray-700 dark:text-gray-900">
                             Experience is the best teacher as they said, here is the work put in place which will satisfied your querying thoughts.
                           </p>
-                          <div class="birth-details flex items-center justify-evenly flex-1  p-4">
-                            <div class="left-hand-side flex flex-col mx-auto px-4 py-6 flex-1">
-                              
-                              <span class="flex items-center gap-1 mb-3">
-                                <i class='bx bx-globe text-blue-500'></i>
-                                <strong class="text-id sm:text-sm text-xl font-semibold font-serif text-slate-700">Website: </strong>
-                                <a href="https://www.ediMars.com" class="text-solute sm:text-xs no-underline text-lg font-semibold font-serif text-slate-700">ediMars.com</a>
-                              </span>
-                              <span class="flex items-center gap-1 mb-3">
-                                <i class='bx bx-phone text-blue-500'></i>
-                                <strong class="text-id sm:text-sm text-xl font-semibold font-serif text-slate-700">Phone: </strong>
-                                <p class="text-solute sm:text-xs text-lg font-semibold font-serif text-slate-700">+234 (0) 812 425 3772</p>
-                              </span>
-                              <span class="flex items-center gap-1 mb-3">
-                                <i class="uil uil-user-location text-blue-500"></i>
-                                <strong class="text-id sm:text-sm text-xl font-semibold font-serif text-slate-700">State: </strong>
-                                <p class="text-solute sm:text-xs text-lg font-semibold font-serif text-slate-700">Akwa Ibom State.</p>
-                              </span>
-                              <span class="flex items-center gap-1 mb-3">
-                                <i class="uil uil-user-location text-blue-500"></i>
-                                <strong class="text-id sm:text-sm text-xl font-semibold font-serif text-slate-700">City: </strong>
-                                <p class="text-solute sm:text-xs text-lg font-semibold font-serif text-slate-700">Ika L. G. A.</p>
-                              </span>
-                            </div>
 
-                            <div class="right-hand-side flex flex-col mx-auto px-4 py-6 flex-1"></div>
-                              <span class="flex items-center gap-1 mb-3">
-                                <i class='bx bxs-certification text-blue-500'></i>
-                                <strong class="text-id sm:text-sm text-2xl font-semibold font-serif text-slate-700">Degree: </strong>
-                                <p class="text-slate-700 text-lg font-semibold font-serif mt-3 ml-1">PGD in view</p>
-                              </span>
-                              <span class="flex items-center gap-1 mb-3">
-                                <i class='bx bx-at text-blue-500'></i>
-                                <strong class="text-id sm:text-sm text-xl font-semibold font-serif text-slate-700">Email: </strong>
-                                <a href="mailto: edimarsxe@gmail.com" class="text-solute sm:text-xs no-underline text-lg font-semibold font-serif text-slate-700">edimarsxe@gmail.com</a>
-                              </span>
-                              <span class="flex items-center gap-1 mb-3">
-                                <i class="uil uil-laptop text-blue-500"></i>
-                                <strong class="text-id sm:text-sm text-xl font-semibold font-serif text-slate-700">Freelance: </strong>
-                                <a href="#" class="text-solute sm:text-xs no-underline text-lg font-semibold font-serif text-slate-700">Available</a>
-                              </span>
+                          <div class="birth-details p-4 mb-3">
+
+                            <span class="d-flex items-center gap-1 mb-3">
+                              <i class='fa-regular fa-headphones fs-4 fw-bold text-primary'></i>
+                              <strong class="text-id sm:text-sm fs-2 fw-semibold text-dark">Phone: </strong>
+                              <p class="text-solute sm:text-xs fs-1 fw-semibold text-dark">+234 (0) 812 425 3772</p>
+                            </span>
+
+                            <span class="icons-detail d-flex items-center gap-1 mb-3">
+                              <i class="fa-regular fa-envelope fs-4 fw-bold text-primary"></i>
+                              <strong class="text-id sm:text-sm fs-2 fw-semibold text-dark">Email: </strong>
+                              <a href="mailto: edimarsxe@gmail.com" class="text-solute sm:text-xs no-underline fs-1 fw-semibold text-dark">edimarsxe@gmail.com</a>
+                            </span>
+
+                            <span class="icons-detail laptop-icon d-flex items-center gap-1 mb-3">
+                              <i class="fa-solid fa-laptop fs-4 fw-bold text-primary"></i>
+                              <strong class="text-id sm:text-sm fs-2 fw-semibold text-dark">Freelance: </strong>
+                              <a href="#" class="text-solute sm:text-xs no-underline fs-1 fw-semibold text-dark">Available</a>
+                            </span>
                               <!-- <span class="flex items-center gap-1 mb-3"><i class='bx bx-caret-right text-blue-500'></i><strong class="text-id sm:text-sm">Age: </strong> <p class="text-solute sm:text-xs">38</p></span> -->
-                            </div>
                           </div>
+                        </div>
+
                           <div class="about-btn-container">
                             <a href="{% static 'assets/best_resume (2).pdf' %}" download class="main-btn">
-                              <span class="btn-text">Download CV</span>
+                              <span class="btn-text btn-about-download">Download CV</span>
                               <span class="btn-icon"><i class="fas fa-download"></i></span>
                             </a>
                           </div>
@@ -333,3 +313,6 @@
   </div>
 
 {% endblock %}
+
+
+

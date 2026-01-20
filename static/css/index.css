@@ -83,7 +83,7 @@ a {
 .servicesBtn, 
 .signupBtn, 
 .loginBtn {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   gap: 30px;
   margin: 10px;
@@ -100,7 +100,7 @@ a {
 .servicesBtn i, 
 .signupBtn i, 
 .loginBtn i {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
 }
 .logoutBtn
@@ -340,7 +340,48 @@ a {
   align-self: self-end;
   align-items: center;
   gap: 2px;
-  margin-left: 20%;
+  margin-right: 30%;
+}
+.birth-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+}
+.laptop-icon {
+  margin-right: 5%;
+}
+.icons-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.btn-about-download {
+  color: var(--color-dark-1);
+  text-decoration: none;
+}
+.about-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.about-text h1 {
+  font-size: 36px;
+  font-weight: 600;
+  font-family: serif;
+  color: var(--color-white);
+}
+.about-text p {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: serif;
+  color: var(--color-white);
 }
 /** END OF ABOUT PAGE SECTION **/
 
@@ -461,11 +502,15 @@ a {
   font-weight: 600;
   font-family: serif;
 }
+.user_authenticated-container {
+  margin: 0;
+  padding: 0;
+}
 .signup-form {
   background-color: var(--col-grey0);
   width: 50%;
   height: 100%;
-  margin-top: 1rem;
+  margin-top: -5%;
   margin-bottom: 1rem;
 }
 .signup-link {
@@ -523,6 +568,7 @@ a {
   margin-bottom: 6rem;
   border-radius: 50%;
 }
+
 /** END OF SIGNUP PAGE SECTION **/
 
 
