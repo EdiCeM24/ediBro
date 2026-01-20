@@ -5,19 +5,80 @@
 {% block title %} {% endblock title %}
 
 {% block content %}
-  <div class="modal fade" id="staticServices" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade services" id="staticServices" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <h1 class="modal-title fs-5 text-dark fw-semibold" id="staticBackdropLabel">My Services</h1>
           <button type="button" class="btn-close fs-5 fw-bold text-danger" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+          <strong class="sub-title">I love developing beautiful websites and mobile applications. Here are some of my services:</strong>
+          <div class="work-info">
+            <div>
+              <img src="{% static 'assets/sc-1.jpg' %}" alt="Photo">
+              <p>
+                Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+            <div>
+              <img src="{% static 'assets/sc-2.jpg' %}" alt="Photo">
+              <p>
+                Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+            <div>
+              <img src="{% static 'assets/sc-4.jpg' %}" alt="Photo">
+              <p>
+                Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+            <div>
+              <img src="{% static 'assets/sc-5.jpg' %}" alt="Photo">
+              <p>
+                Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+            <div>
+              <img src="{% static 'assets/sc-7.jpg' %}" alt="Photo">
+              <p>
+                Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+            <div>
+              <img src="{% static 'assets/sc-8.jpg' %}" alt="Photo">
+              <p>
+                Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+          </div>
+          <div class="services-list">
+            <div>
+              <h2>Web Developer</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam impedit repellendus doloribus?
+              </p>
+              <a href="https://github.com/EdiCeM24">Learn More</a>
+            </div>
+            <div>
+              <h2>Mobile App Developer</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam impedit repellendus doloribus?
+              </p>
+              <a href="https://github.com/EdiCeM24">Learn More</a>
+            </div>
+            <div>
+              <h2>Instructor</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam impedit repellendus doloribus?
+              </p>
+              <a href="https://youtube.com/@EdimarsMarcus">Learn More</a>
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
+          <!-- <button type="button" class="btn btn-primary">Understood</button> -->
         </div>
       </div>
     </div>
