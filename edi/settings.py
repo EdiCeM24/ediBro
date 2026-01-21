@@ -31,8 +31,8 @@ SECRET_KEY = str(os.getenv('DJANGO_SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
-'.vercel.app', '.now_sh', '127.0.0.1', 'localhost'
+ALLOWED_HOSTS = ['.vercel.app', '.now_sh', '127.0.0.1', 'localhost']
+
 
 
 # Application definition
@@ -79,7 +79,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
-    'allauth.socialaccount.middleware.SocialAccountMiddleware',
 ]
 
 ROOT_URLCONF = 'edi.urls'
