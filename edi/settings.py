@@ -32,6 +32,7 @@ SECRET_KEY = str(os.getenv('DJANGO_SECRET_KEY'))
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+'.vercel.app', '.now_sh', '127.0.0.1', 'localhost'
 
 
 # Application definition
@@ -45,7 +46,29 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mars.apps.MarsConfig',
     'phonenumber_field',
+    'allauth.socialaccount',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount.providers.google',
 ]
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP': {
+            'client_id': str(os.getenv('OAUTH_GOOGLE_CLIENT_ID')),
+            'secret':  str(os.getenv('OAUTH_GOOGLE_CLIENT_SECRET')),
+            'key': '',
+        }
+    }
+}
+
+SITE_ID = 1
+
+# AUTHENTICATION_BACKENDS = (
+#     'django.contrib.auth.backends.ModelBackend',
+#     'allauth.account.auth_backends.AuthenticationBackend',
+# )
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -55,6 +78,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
+    'allauth.socialaccount.middleware.SocialAccountMiddleware',
 ]
 
 ROOT_URLCONF = 'edi.urls'
@@ -82,10 +107,20 @@ WSGI_APPLICATION = 'edi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': str(os.getenv('DB_NAME')),
+        'USER': str(os.getenv('DB_USER')),
+        'PASSWORD': str(os.getenv('DB_PASSWORD')),
+        'HOST': str(os.getenv('DB_HOST')),  
+        'PORT': str(os.getenv('DB_PORT')),
     }
 }
 
@@ -128,8 +163,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
   os.path.join(BASE_DIR / 'static')
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media files (User uploaded files)
 MEDIA_URL = '/'
