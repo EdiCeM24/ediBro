@@ -91,7 +91,6 @@
     margin-right: 10%;
   }
   
-
   /** PORTFOLIO PAGE SECTION **/
   .portfolios {
     display: flex;
@@ -102,22 +101,32 @@
   }
   /** SERVICES PAGE SECTION **/
   .work-info {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  padding: 30px 40px;
-  gap: 1.5rem;
-  margin-top: 30px;
-}
-.services-list {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-column: 40px;
-  grid-row: 40px;
-  gap: 40px;
-  margin-top: 50px;
-  padding: 30px 40px;
-}
-
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 30px 40px;
+    gap: 1.5rem;
+    margin-top: 30px;
+  }
+  .services-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column: 40px;
+    grid-row: 40px;
+    gap: 40px;
+    margin-top: 50px;
+    padding: 30px 40px;
+  }
+  /** SIGNUP PAGE SECTION **/
+  .form-control-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 
 
@@ -156,4 +165,16 @@
     justify-content: center;
     gap: 2rem;
   }
+
+  /** SIGNUP PAGE SECTION **/
+  .form-control-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  } 
 }
