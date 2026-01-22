@@ -48,10 +48,12 @@
     height: 100%;
     margin-top: 10%;
   }
-  .user_authenticated span {
+  .user_authenticated span h4 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--color-white);
+    color: #eaf;
+    background-color: black;
+    padding: 15px 30px;
   }
   .text-user-message {
     font-size: 1.2rem;

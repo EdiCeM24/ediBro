@@ -459,7 +459,12 @@ a {
   margin-bottom: 5rem;
   color: var(--color-secondary);
 }
-
+.user_authenticated span h4 {
+  color: var(--color-primary);
+}
+.user_authenticated span h5 {
+  color: #eaf;
+}
 /** END OF LOGIN PAGE SECTION **/
 
 

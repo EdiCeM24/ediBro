@@ -38,7 +38,7 @@ contentDisplaysEl.forEach((icon, index) => {
       
   icon.addEventListener("click", () => {
     contentDisplaysEl.forEach((icon) => {
-      icon.classList.remove("rotate-60");
+      icon.classList.remove("rotate-90");
     });
 
     icon.classList.toggle("rotate-90");
