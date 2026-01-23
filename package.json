@@ -7,6 +7,7 @@
     "start": "node watch static/src/output.css",
     "watch:css": "tailwindcss -i ./static/src/input.css -o ./static/src/output.css --watch",
     "dev": "tailwindcss -i ./static/src/input.css -o ./static/src/output.css --watch",
+    "build": "tailwindcss -i ./static/src/input.css -o ./static/src/output.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
