@@ -15,3 +15,8 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'edi.settings')
 
 application = get_wsgi_application()
 
+  # ============================== 
+  # Below is the code of c:\Users\EdiMars\Desktop\ediBro\edi\asgi.py 
+
+
+
