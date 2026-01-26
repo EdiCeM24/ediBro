@@ -29,16 +29,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = str(os.getenv('DJANGO_SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG') == 'True'
+DEBUG = str(os.getenv('DJANGO_DEBUG'))
 
-ALLOWED_HOSTS = []
-DJANGO_ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS')
-if DJANGO_ALLOWED_HOSTS:
-    ALLOWED_HOSTS.append(DJANGO_ALLOWED_HOSTS)
-
-#'edibro.onrender.com', 'localhost'
-#.split(',')
-#ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS if host.strip()]
+# ALLOWED_HOSTS = []
+DJANGO_ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',')
+DJANGO_ALLOWED_HOSTS = [host.strip() for host in DJANGO_ALLOWED_HOSTS if host.strip()]
+# if DJANGO_ALLOWED_HOSTS:
+#     ALLOWED_HOSTS.append(DJANGO_ALLOWED_HOSTS)
 
 
 
@@ -72,10 +69,10 @@ SOCIALACCOUNT_PROVIDERS = {
 
 SITE_ID = 1
 
-# AUTHENTICATION_BACKENDS = (
-#     'django.contrib.auth.backends.ModelBackend',
-#     'allauth.account.auth_backends.AuthenticationBackend',
-# )
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 
 MIDDLEWARE = [
@@ -128,7 +125,7 @@ DATABASES = {
         'USER': str(os.getenv('DB_USER')),
         'PASSWORD': str(os.getenv('DB_PASSWORD')),
         'HOST': str(os.getenv('DB_HOST')),  
-        'PORT': str(os.getenv('DB_PORT')),
+        'PORT': int(os.getenv('DB_PORT')),
     }
 }
 

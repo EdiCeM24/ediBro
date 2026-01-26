@@ -66,8 +66,9 @@ a {
 .my-logo, .myLogo {
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 2px;
   text-decoration: none;
+  margin-left: 4%;
 }
 .myLogo span {
   font-size: 5rem;
