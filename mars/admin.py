@@ -8,26 +8,18 @@ class ContactAdmin(admin.ModelAdmin):
 class PasswordResetAdmin(admin.ModelAdmin):
     list_display = ('user', 'reset_id', 'created_when')
 
-class ProductAdmin(admin.ModelAdmin):
-    list_display = ('image', 'name', 'description')
-
-class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ('user', 'profile', 'bio', 'location', 'birth_date')
-
-class userTestimonialAdmin(admin.ModelAdmin):
+class UserTestimonialAdmin(admin.ModelAdmin):
     list_display = ('image', 'name', 'designation', 'message')    
 
+class InforAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email_id', 'message')
 
 
-
-
-admin.site.register(UserProfile, UserProfileAdmin)
 
 admin.site.register(Contact, ContactAdmin)
 
 admin.site.register(PasswordReset, PasswordResetAdmin)
 
-admin.site.register(Product, ProductAdmin)
+admin.site.register(UserTestimonial, UserTestimonialAdmin)
 
-admin.site.register(userTestimonial, userTestimonialAdmin)
-
+admin.site.register(Infor, InforAdmin)

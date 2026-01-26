@@ -752,13 +752,13 @@ a {
 
 
 .footer-1 {
-  margin-top: 1rem;
+  margin-top: 1rem !important;
   margin-bottom: 5rem;
 }
 .footer-text {
   font-size: 16px;
   font-weight: 600;
   color: var(--color-grey-1);
-  margin-top: 1rem;
+  margin-top: .4rem;
   margin-bottom: 2rem;
 }

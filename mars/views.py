@@ -25,7 +25,17 @@ from django.contrib.auth import authenticate, login as auth_login, logout
 
 @login_required(login_url='login')
 def home(request):
-  return render(request, 'home/index.html')
+  userTestimonial = UserTestimonial.objects.all()
+  if request.method == 'POST':
+      name = request.POST.get('name').strip()
+      email = request.POST.get('email').strip()
+      message = request.POST.get('message').strip()
+
+      user_data_has_error = False
+
+      if User.objects.filter():
+        user_data_has_error = True
+  return render(request, 'home/index.html', {'userTestimonial': userTestimonial})
 
 
 def signupView(request):
