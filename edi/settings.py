@@ -34,8 +34,8 @@ SECRET_KEY = str(os.getenv('DJANGO_SECRET_KEY'))
 DEBUG = str(os.getenv('DJANGO_DEBUG'))
 
 # ALLOWED_HOSTS = []
-DJANGO_ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS')
-DJANGO_ALLOWED_HOSTS = [host.strip() for host in DJANGO_ALLOWED_HOSTS if host.strip()]
+DJANGO_ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '')
+# DJANGO_ALLOWED_HOSTS = [host.strip() for host in DJANGO_ALLOWED_HOSTS if host.strip()]
 if 'RENDER' in os.environ:
     # Override default settings with Render-specific ones
     DEBUG = False
