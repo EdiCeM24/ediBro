@@ -32,7 +32,7 @@ SECRET_KEY = str(os.getenv('DJANGO_SECRET_KEY'))
 DEBUG = str(os.getenv('DJANGO_DEBUG'))
 
 # ALLOWED_HOSTS = []
-DJANGO_ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',')
+DJANGO_ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'edibro-1.onrender.com').split(',')
 DJANGO_ALLOWED_HOSTS = [host.strip() for host in DJANGO_ALLOWED_HOSTS if host.strip()]
 # if DJANGO_ALLOWED_HOSTS:
 #     ALLOWED_HOSTS.append(DJANGO_ALLOWED_HOSTS)
