@@ -34,7 +34,7 @@ SECRET_KEY = str(os.getenv('DJANGO_SECRET_KEY'))
 DEBUG = str(os.getenv('DJANGO_DEBUG'))
 
 # ALLOWED_HOSTS = []
-DJANGO_ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '')
+ALLOWED_HOSTS = os.getenv('edibro.onrender.com')
 # DJANGO_ALLOWED_HOSTS = [host.strip() for host in DJANGO_ALLOWED_HOSTS if host.strip()]
 if 'RENDER' in os.environ:
     # Override default settings with Render-specific ones
@@ -123,17 +123,18 @@ WSGI_APPLICATION = 'edi.wsgi.application'
 # }
 DATABASES = {
      'default': dj_database_url.config(
-         default='postgresql://postgres:Dutrix@glory@localhost:5432/edimars',
+         default='postgresql://edimar_user:c8F9EWnW5UH9t67RF6XTXS7tm1btqhsv@dpg-d5rsnd718n1s73cvs310-a/edimar',
          conn_max_age=600
+         #default='postgresql://postgres:Dutrix@glory@localhost:5432/edimars',
     ),
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': str(os.getenv('DB_NAME')),
-        'USER': str(os.getenv('DB_USER')),
-        'PASSWORD': str(os.getenv('DB_PASSWORD')),
-        'HOST': str(os.getenv('DB_HOST')),  
-        'PORT': str(os.getenv('DB_PORT')),
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': str(os.getenv('DB_NAME')),
+    #     'USER': str(os.getenv('DB_USER')),
+    #     'PASSWORD': str(os.getenv('DB_PASSWORD')),
+    #     'HOST': str(os.getenv('DB_HOST')),  
+    #     'PORT': str(os.getenv('DB_PORT')),
+    # }
    
 }
     
