@@ -12,7 +12,7 @@ services:
     buildCommand: "./build.sh"
     startCommand: "python -m gunicorn edi.asgi:application -k uvicorn.workers.UvicornWorker"
     envVars:
-      - key: postgresql://edimar_user:c8F9EWnW5UH9t67RF6XTXS7tm1btqhsv@dpg-d5rsnd718n1s73cvs310-a/edimar
+      - key: postgresql://postgre:MtMBZcAd8a9EOnwUYEDHPImo9Xuffzfe@dpg-d5saa0blr7ts738r0otg-a/edimars_in09
         fromDatabase:
           name: edidb
           property: connectionString
