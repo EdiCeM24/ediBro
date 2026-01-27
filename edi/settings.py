@@ -34,7 +34,7 @@ SECRET_KEY = str(os.getenv('DJANGO_SECRET_KEY'))
 DEBUG = str(os.getenv('DJANGO_DEBUG'))
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['edibro.onrender.com']
+ALLOWED_HOSTS = ['edibro.onrender.com', "localhost", "127.0.0.1"]
 # DJANGO_ALLOWED_HOSTS = [host.strip() for host in DJANGO_ALLOWED_HOSTS if host.strip()]
 # if 'RENDER' in os.environ:
     # Override default settings with Render-specific ones
@@ -179,17 +179,14 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
   os.path.join(BASE_DIR / 'static')
 ]
-
-if not DEBUG:
-   STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 # Media files (User uploaded files)
 MEDIA_URL = '/'
 MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
 
-if not DEBUG:
-    # Enable the WhiteNoise storage backend
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+ # Enable the WhiteNoise storage backend
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 LOGIN_REDIRECT_URL = 'home'
