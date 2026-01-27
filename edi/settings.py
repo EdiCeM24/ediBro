@@ -121,8 +121,8 @@ WSGI_APPLICATION = 'edi.wsgi.application'
 # }
 DATABASES = {
      'default': dj_database_url.config(
-        default='postgresql://postgres:Dutrix@glory@localhost:5432/edimars',
-        #os.environ.get('DATABASE_URL'),
+        default = ' postgresql://postgres:Dutrix@glory@localhost:5432/edimars',
+        # default = os.getenv('EXTERNAL_DATABASE_URL'),
         conn_max_age=600,
         conn_health_checks=True,
          
