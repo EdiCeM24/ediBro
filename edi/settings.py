@@ -14,6 +14,8 @@ import os
 
 import dj_database_url
 
+from decouple import config
+
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -28,16 +30,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = str(os.getenv('DJANGO_SECRET_KEY', default='django-insecure-u@&cyz_*ebvy*6g1$w)264zisbpq4zdj+32t*6y)4#5!5h=u^4'))
+SECRET_KEY = str(os.getenv('DJANGO_SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = str(os.getenv('DJANGO_DEBUG'))
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = []
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+ALLOWED_HOSTS = config('DJANGO_ALLOWED_HOSTS').split(',')
 
 
 # Application definition
@@ -51,6 +50,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mars.apps.MarsConfig',
     'phonenumber_field',
+
+    
     'allauth.socialaccount',
     'allauth',
     'allauth.account',
@@ -113,31 +114,25 @@ WSGI_APPLICATION = 'edi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': str(os.getenv('DB_NAME')),
+        'USER': str(os.getenv('DB_USER')),
+        'PASSWORD': str(os.getenv('DB_PASSWORD')),
+        'HOST': str(os.getenv('DB_HOST')),  
+        'PORT': str(os.getenv('DB_PORT')),
+    }
+}
+
+# DATABASES['default'] = dj_database_url.parse(config("DATABASE_URL"), conn_max_age=600)
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
-# }
-DATABASES = {
-     'default': dj_database_url.config(
-        default = ' postgresql://postgres:Dutrix@glory@localhost:5432/edimars',
-        # default = os.getenv('EXTERNAL_DATABASE_URL'),
-        conn_max_age=600,
-        conn_health_checks=True,
-         
-    )
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': str(os.getenv('DB_NAME')),
-    #     'USER': str(os.getenv('DB_USER')),
-    #     'PASSWORD': str(os.getenv('DB_PASSWORD')),
-    #     'HOST': str(os.getenv('DB_HOST')),  
-    #     'PORT': str(os.getenv('DB_PORT')),
-    # }
-   
-}
-    
+# }    
 
 
 # Password validation
@@ -179,6 +174,7 @@ STATICFILES_DIRS = [
   os.path.join(BASE_DIR / 'static')
 ]
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 # This production code might break development mode, so we check whether we're in DEBUG mode
 if not DEBUG:
     # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
